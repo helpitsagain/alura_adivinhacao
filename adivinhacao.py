@@ -16,7 +16,7 @@ while jogar == 'Y':
   tentativas = 5
   rodada = 1
 
-  print('Rodada:', rodada, 'de', tentativas)
+  print(f'Rodada: {rodada} de {tentativas}')
   chute_str = input('Escolha um número: ')
   chute = int(chute_str)
   maior = chute > numero_secreto
@@ -27,12 +27,12 @@ while jogar == 'Y':
     if maior:
       print('Você errou... O número secreto é menor!')
       print('')
-      print('Rodada:', rodada, 'de', tentativas)
+      print(f'Rodada: {rodada} de {tentativas}')
 
     elif menor:
       print('Você errou... O número secreto é maior!')
       print('')
-      print('Rodada:', rodada, 'de', tentativas)
+      print(f'Rodada: {rodada} de {tentativas}')
     chute_str = input('Escolha um número: ')
     chute = int(chute_str)
     maior = chute > numero_secreto
@@ -46,7 +46,7 @@ while jogar == 'Y':
     print('Errado de novo...')
     print('')
     print('Você gastou todas as tentativas, sinto muito. Você é burrinho. Eu não faço as regras.')
-    print('(Caso você queira saber, o número secreto era', numero_secreto)
+    print(f'(Caso você queira saber, o número secreto era {numero_secreto}')
     print('')
 
   print('*********************************')
