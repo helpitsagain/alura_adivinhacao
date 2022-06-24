@@ -4,7 +4,7 @@ print('*********************************')
 print('Bem vindo ao Jogo de Adivinhação!')
 print('*********************************')
 print('Neste jogo, você precisa adivinhar o número secreto.')
-print('Este número fica entre 1 e 50.')
+print('Este número fica entre 1 e 100.')
 print('Boa sorte!')
 print('*********************************')
 print('')
@@ -12,9 +12,22 @@ print('')
 jogar = 'Y'
 
 while jogar == 'Y':
-    numero_secreto = random.randrange(1, 51)
-    tentativas = 5
-    print(numero_secreto)
+    numero_secreto = random.randrange(1, 101)
+
+    print('(1) Fácil | (2) Médio | (3) Difícil')
+    nivel = int(input('Selecione o nível de dificuldade: '))
+    print('')
+    if nivel == 1:
+        tentativas = 20
+    elif nivel == 2:
+        tentativas = 10
+    elif nivel == 3:
+        tentativas = 5
+    else:
+        print('Você deveria ter inserido os números 1, 2 ou 3.')
+        print('Já que você decidiu pela teimosia, fique com o nível mais difícil possível.')
+        tentativas = 3
+        print('')
 
     for rodada in range(1, tentativas + 1):
         print(f'Rodada {rodada} de {tentativas}')
