@@ -18,36 +18,37 @@ while jogar == 'Y':
     nivel = int(input('Selecione o nível de dificuldade: '))
     print('')
     if nivel == 1:
-        tentativas = 20
-    elif nivel == 2:
         tentativas = 10
+        print('Você escolheu a dificuldade (1) Fácil.')
+    elif nivel == 2:
+        tentativas = 7
+        print('Você escolheu a dificuldade (2) Médio.')
     elif nivel == 3:
         tentativas = 5
+        print('Você escolheu a dificuldade (3) Difícil.')
     else:
-        print('Você deveria ter inserido os números 1, 2 ou 3.')
+        print('Você deveria ter inserido os números 1, 2 ou 3...')
         print('Já que você decidiu pela teimosia, fique com o nível mais difícil possível.')
         tentativas = 3
-        print('')
 
     for rodada in range(1, tentativas + 1):
         print(f'Rodada {rodada} de {tentativas}')
-        chute = int(input('Escolha um número entre 1 e 50: '))
+        chute = int(input('Escolha um número entre 1 e 100: '))
 
-        if (chute < 1) | (chute > 50):
+        if (chute < 1) | (chute > 100):
             print('Você deve digitar um número entre 1 e 100!')
             print('')
-            continue
 
-        if chute == numero_secreto:
-            print(f'Parabéns, você acertou! O número secreto é {numero_secreto}!')
-            print('')
-            break
-        if chute > numero_secreto:
+        elif chute > numero_secreto:
             print('Você errou... O número secreto é menor!')
             print('')
         elif chute < numero_secreto:
             print('Você errou... O número secreto é maior!')
             print('')
+        elif chute == numero_secreto:
+            print(f'Parabéns, você acertou! O número secreto é {numero_secreto}!')
+            print('')
+            break
 
     if chute != numero_secreto:
         print('Errado de novo...')
