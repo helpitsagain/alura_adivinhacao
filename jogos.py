@@ -1,18 +1,24 @@
-from jogos import adivinhacao, forca
+import forca
+import adivinhacao
 
-print('**********************************')
-print('******* Escolha o seu jogo *******')
-print('**********************************')
+def escolher_jogo():
+    print('**********************************')
+    print('******* Escolha o seu jogo *******')
+    print('**********************************')
 
-print('(1) Forca | (2) Adivinhação')
-jogo = int(input('Selecione uma opção: '))
-print('')
-
-if jogo == 1:
-    print('Jogando "Forca"!')
+    print('(1) Forca | (2) Adivinhação')
+    jogo = int(input('Selecione uma opção: '))
     print('')
-    forca.jogar()
-elif jogo == 2:
-    print('Jogando "Adivinhação"!')
-    print('')
-    adivinhacao.jogar()
+
+    if jogo == 1:
+        print('Jogando "Forca"!')
+        print('')
+        forca.jogar()
+    elif jogo == 2:
+        print('Jogando "Adivinhação"!')
+        print('')
+        adivinhacao.jogar()
+
+
+if __name__ == '__main__':
+    escolher_jogo()
