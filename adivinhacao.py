@@ -13,6 +13,7 @@ jogar = 'Y'
 
 while jogar == 'Y':
     numero_secreto = random.randrange(1, 101)
+    pontos = 100
 
     print('(1) Fácil | (2) Médio | (3) Difícil')
     nivel = int(input('Selecione o nível de dificuldade: '))
@@ -35,20 +36,23 @@ while jogar == 'Y':
         print(f'Rodada {rodada} de {tentativas}')
         chute = int(input('Escolha um número entre 1 e 100: '))
 
-        if (chute < 1) | (chute > 100):
-            print('Você deve digitar um número entre 1 e 100!')
-            print('')
-
-        elif chute > numero_secreto:
-            print('Você errou... O número secreto é menor!')
-            print('')
-        elif chute < numero_secreto:
-            print('Você errou... O número secreto é maior!')
-            print('')
-        elif chute == numero_secreto:
+        if chute == numero_secreto:
             print(f'Parabéns, você acertou! O número secreto é {numero_secreto}!')
+            print(f'Você fez {pontos} pontos!')
             print('')
             break
+        else:
+            if chute > numero_secreto:
+                print('Você errou... O número secreto é menor!')
+                print('')
+            elif chute < numero_secreto:
+                print('Você errou... O número secreto é maior!')
+                print('')
+            elif (chute < 1) | (chute > 100):
+                print('Você deve digitar um número entre 1 e 100!')
+                print('')
+            pontos_perdidos = abs(numero_secreto - chute)
+            pontos = pontos - pontos_perdidos
 
     if chute != numero_secreto:
         print('Errado de novo...')
